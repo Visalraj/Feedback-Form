@@ -1,0 +1,76 @@
+body{
+        font-family: 'SF Pro Display';
+       /* background: #DEC4B5;  */
+       }
+       form{
+        max-width:500px;
+        margin: auto;
+        background: lightblue;
+        padding: 8px;
+        margin-top: 15px; 
+        border: none;
+        border-radius: 10px;
+       }
+       
+      h6{
+        color:black;
+        text-align: center; 
+       }
+      
+       label{
+        margin-left: 3px;
+        font-size: 17px;
+        margin-top: 2px;
+        margin-bottom: 3px;
+       }
+      
+      
+      
+       #fname,#lname{
+      margin-left: 3px;
+      margin-top: 2px;
+      margin-bottom: 3px;
+      border: none;
+      border-radius: 7px;
+       }
+       #textarea{
+        resize: none;
+        margin-top: 2px;
+        margin-bottom: 3px;
+        border: none;
+        border-radius: 7px;
+       }
+       #textareasug{
+        resize: none;
+        margin-top: 2px;
+        margin-bottom: 3px;
+        border: none;
+        border-radius: 7px;
+       }
+       #exp{
+        margin-left: 2px;
+        margin-top: 2px;
+        margin-bottom: 1px;
+       }
+       #sub{
+        margin-top:2px;
+        margin-bottom: 2px;
+       }
+      #copyright{
+      margin-top: 5px;
+      }
+      .error{
+        color:red;
+      }
+      #headerspan{
+        font-size: 23px;
+        color: #0C9ED7;
+        font-weight: 500;
+      }
+      .navbar{
+        box-shadow: 0 0 7px 0 #DEC4B5;
+      }
+      img{
+        width:132px;
+      }
+      

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head> 
+    
+
+
+    <!-- ajax cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- sf pro display cdn -->
+    <link rel="preconnect" href="//fdn.fontcdn.ir"><link rel="preconnect" href="//v1.fontapi.ir"><link href="https://v1.fontapi.ir/css/SFProDisplay:300" rel="stylesheet">
+
+                
+   <!-- sw cdn -->
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link> 
+   
+
+<!-- jquery validation cdns -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<link rel="icon" href="newlogo.jpeg" wirth="100" height="100">
+<!-- css refering -->
+<link rel="stylesheet" href="index.css">
+<title>NiTe 2K22 Feedback</title>
+  </head>
+  <style>
+ 
+
+
+
+</style>
+  <body>
+    <nav class="navbar ">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12">
+            <a class="navbar-brand" href="#">
+              <img src="newlogo.jpeg" alt="Logo" class="d-inline-block align-text-center">
+            </a>
+            <span id="headerspan">NiTe 2K22</span>
+
+          </div>
+        </div>
+    
+      </div>
+    </nav>
+  
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12">
+            <form   id="submit-form"  action="">
+
+           <h6>Feedback Form</h6>  
+
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" name="firstname" class="form-control" id="fname">
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="text" name="lastname" class="form-control" id="lname">
+        </div>
+        <div class="form-group">
+          <label for="textarea">Comments</label>
+          <textarea  id="textarea" name="comments" class="form-control" rows="3" cols="53" ></textarea>
+       </div>
+      <div class="form-group">
+        <label for="textarea">Suggestions</label>
+        <textarea  id="textareasug" class="form-control" rows="2" cols="53" name="suggestions"></textarea>
+     </div>
+      <div class="form-group">
+        <label for="experience">Experience</label><br>
+        <input type="radio" id="exp" name="experience" value="Poor"> Poor
+        <input type="radio" id="exp" name="experience" value="Average"> Average
+        <input type="radio" id="exp" name="experience" value="Great"> Great
+        <input type="radio" id="exp" name="experience" value="Excellent"> Excellent
+      </div>
+      <button type="submit" class="btn btn-primary form-control " id="sub">Submit</button>
+      <span id="copyright"><center>&#169; 2022 Conceived Visalraj 3<sup>rd</sup> year BCA.</center></span>
+    </form>
+    
+  </div>
+  </div>
+  </div> 
+
+
+
+<script>
+  $("#sub").click(function(){
+var fname=$("#fname").val();
+var lname=$("#lname").val();
+var com=$("#textarea").val();
+var exp=$("#exp").val();
+if(fname==''||com==''||exp==''){
+  event.preventDefault();
+  swal({
+title: "Fields Empty!",
+text: "Please check the missing fields.",
+icon: "error",
+button: "Ok",
+});
+}else{
+$("#submit-form").submit((e)=>{
+  e.preventDefault()
+  $.ajax({
+      url:"https://script.google.com/a/nirmalacollege.ac.in/macros/s/AKfycbygM8ILhZx0ugpZv_1VkPzxU4kAvTcB9_W449dDXA/exec",
+      data:$("#submit-form").serialize(),
+      method:"post",
+      success:function (response){
+         event.preventDefault();
+        swal({
+                  title: "Thankyou!",
+                  text: "Your responds received.",
+                  icon: "success",
+        });         
+        setTimeout(function(){
+   window.location.reload();
+}, 1000)
+      },
+      error:function (err){
+        event.preventDefault();
+        swal({
+          title: "Ouch!",
+                  text: "Something error occured!",
+                  icon: "info",
+                   button: "Ok",
+        });         
+        setTimeout(function(){
+   window.location.reload();
+}, 1000)
+      }
+  })
+})
+
+}
+
+  })
+
+</script>
+
+  
+  
+
+  
+
+
+<!-- validation pagebelow  js file-->
+
+<script src="feedback.js"></script>
+
+
+
+
+   <!-- jQuery cdn -->
+   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
+   crossorigin="anonymous"></script>
+  <!-- bootstrap cdn -->
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+ 
